@@ -1,0 +1,42 @@
+﻿<Window x:Class="Zadatak_1.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadatak_1.View"
+        mc:Ignorable="d"
+        Title="LoginView" Height="450" Width="500">
+    <Border  CornerRadius="20" Margin="20">
+        <StackPanel Margin="15">
+            <Label Content="Login" Foreground="Black" FontSize="25" HorizontalAlignment="Center"/>
+            <Separator></Separator>
+            <Label Content="Username" Foreground="Black" Margin="0 -5"/>
+            <TextBox Name="txtUsername" Text="{Binding UserName, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"  Foreground="Black" FontSize="12" Margin="0,10,-0.2,10" Height="34"/>
+            <Label Content="Password" Foreground="Black" Margin="0 10"/>
+            <PasswordBox Name="passwordBox"  Foreground="Black" FontSize="12" Margin="0,-10,-0.2,-10" Height="35"/>
+            <Button Command="{Binding Login, UpdateSourceTrigger=PropertyChanged}" CommandParameter="{Binding ElementName=passwordBox}"
+                    Name="btnLogin" Content="Login" Margin="111,25,98.8,25" Background="#545d6a" Foreground="White" FontSize="18" IsDefault="True">
+                    
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=txtUsername, Path=Text}"
+                                         Value="">
+                                <Setter Property="Button.IsEnabled"
+                                        Value="false" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=txtPassword, Path=Password}"
+                                        Value="">
+                                <Setter Property="Button.IsEnabled"
+                                        Value="false" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            
+        </StackPanel>
+    </Border>
+    </Window>
+
+

@@ -161,6 +161,9 @@ namespace Zadatak_1.ViewModel
 
 
         private ICommand deleteProduct;
+        /// <summary>
+        /// Delete product command
+        /// </summary>
         public ICommand DeleteProduct
         {
             get
@@ -173,51 +176,44 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// Delete product execute
+        /// </summary>
         private void DeleteProductExecute()
         {
-            var result = MessageBox.Show("Are you sure you want to delete the product?", "Confirmation",
-                MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
+            try
             {
-                try
+                if (Product != null)
                 {
-                    if (Product != null)
+                    int productID = Product.ID;
+                    if (Product.Stored == true)
                     {
+                        MessageBox.Show("Can't delete stored product");
+                    }
+                    else
+                    {
+                        service.DeleteProduct(productID);
+                        
+                        MessageBox.Show("Product has been deleted");
+                    }
 
-                        int productId = Product.ID;
-                        if (Product.Stored == true)
-                        {
-                            MessageBox.Show("Product is stored and cannot be deleted from database.");
-                            
-                        }
-                        else
-                        {
-
-                            service.DeleteProduct(productId);
-                            MessageBox.Show("Product " + Product.ProductName + " with code:" + Product.ProductKey + " deleted from database.");
-                            
-                        }
-                        using (DAN_XLVEntities context = new DAN_XLVEntities())
-                        {
-                            ProductList = context.tblProducts.ToList();
-                        }
+                    using (DAN_XLVEntities db = new DAN_XLVEntities())
+                    {
+                        ProductList =db.tblProducts.ToList();
                     }
 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
             }
-            else
+            catch (Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
         }
 
-       
+        /// <summary>
+        /// Can delete product execute
+        /// </summary>
+        /// <returns>Can or cannot</returns>
         private bool CanDeleteProductExecute()
         {
             if (Product == null)
@@ -225,6 +221,7 @@ namespace Zadatak_1.ViewModel
             else
                 return true;
         }
+
 
 
         #endregion

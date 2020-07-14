@@ -49,8 +49,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Product Name"
                                         Binding="{Binding ProductName}" />
-                    <DataGridTextColumn Header="Product Code"
-                                        Binding="{Binding ProductCode}" />
+                    <DataGridTextColumn Header="Product Key"
+                                        Binding="{Binding ProductKey}" />
                     <DataGridTextColumn Header="Quantity"
                                         Binding="{Binding Quantity}" />
                     <DataGridTextColumn Header="Price"
@@ -60,14 +60,13 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Button Grid.Column="4"
-                Grid.Row="1"
+        <Button 
                 Name="btnStoreProduct"
                 Content="Store Product"
                 Width="80"
                 Height="20"
                 Command="{Binding StoreProduct, UpdateSourceTrigger=PropertyChanged}"
-                FontWeight="Bold" Margin="21.2,7.2,-80.4,0" />
+                FontWeight="Bold" Margin="51.2,0.2,-110.4,6.2" Grid.Column="4" Grid.Row="1" />
 
     </Grid>
 </Window>

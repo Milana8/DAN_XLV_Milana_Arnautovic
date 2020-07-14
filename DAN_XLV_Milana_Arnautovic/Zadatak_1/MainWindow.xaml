@@ -30,23 +30,22 @@
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="ProductName"
-                                    Binding="{Binding tblProducts.ProductName}" />
+                                    Binding="{Binding ProductName}" />
                 <DataGridTextColumn Header="ProductKey"
-                                    Binding="{Binding tblProducts.ProductKey}" />
+                                    Binding="{Binding ProductKey}" />
 
                 <DataGridTextColumn Header="Quantity"
-                                    Binding="{Binding tblProducts.Quantity}" />
+                                    Binding="{Binding Quantity}" />
 
                 <DataGridTextColumn Header="Price"
-                                    Binding="{Binding tblProducts.Price}" />
+                                    Binding="{Binding Price}" />
                 <DataGridTextColumn Header="Stored"
-                                    Binding="{Binding tblProducts.Stored}" />
+                                    Binding="{Binding Stored}" />
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  Command="{Binding Path=DataContext.Delete, RelativeSource= {RelativeSource FindAncestor,
-                                       AncestorType={x:Type DataGrid}},UpdateSourceTrigger=PropertyChanged}"
+                            <Button Name="btnDeleteProduct" Command="{Binding DeleteProduct, UpdateSourceTrigger=PropertyChanged}"
                                      Content="Delete" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

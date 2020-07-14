@@ -23,7 +23,7 @@ namespace Zadatak_1.View
         public StorekeeperView()
         {
             InitializeComponent();
-            //this.DataContext = new StorekeeperViewModel(this);
+            this.DataContext = new StorekeeperViewModel(this);
         }
     }
 }

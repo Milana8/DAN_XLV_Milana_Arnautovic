@@ -23,3 +23,5 @@ C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Za
 C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Zadatak_1\obj\Debug\Zadatak_1.csproj.CopyComplete
 C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Zadatak_1\obj\Debug\Zadatak_1.exe
 C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Zadatak_1\obj\Debug\Zadatak_1.pdb
+C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Zadatak_1\obj\Debug\View\AddProductView.g.cs
+C:\Users\Korisnik\Desktop\DAN_XLV_Milana_Arnautovic\DAN_XLV_Milana_Arnautovic\Zadatak_1\obj\Debug\View\AddProductView.baml

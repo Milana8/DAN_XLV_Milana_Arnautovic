@@ -7,6 +7,67 @@
         mc:Ignorable="d"
         Title="StorekeeperView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1"
+              Grid.Row="1"
+              Height="auto"
+              Width="auto">
+            <DataGrid Name="DataGridResults"
+                      ItemsSource="{Binding ProductList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Product,UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False"
+                      Visibility="{Binding ViewProduct, UpdateSourceTrigger=PropertyChanged}"
+                      HorizontalGridLinesBrush="Black"
+                      BorderBrush="Black"
+                      Foreground="Black"
+                      FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product Name"
+                                        Binding="{Binding ProductName}" />
+                    <DataGridTextColumn Header="Product Code"
+                                        Binding="{Binding ProductCode}" />
+                    <DataGridTextColumn Header="Quantity"
+                                        Binding="{Binding Quantity}" />
+                    <DataGridTextColumn Header="Price"
+                                        Binding="{Binding Price}" />
+                    <DataGridTextColumn Header="Stored"
+                                        Binding="{Binding Stored}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Button Grid.Column="4"
+                Grid.Row="1"
+                Name="btnStoreProduct"
+                Content="Store Product"
+                Width="80"
+                Height="20"
+                Command="{Binding StoreProduct, UpdateSourceTrigger=PropertyChanged}"
+                FontWeight="Bold" Margin="21.2,7.2,-80.4,0" />
+
     </Grid>
 </Window>

@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadatak_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Manager" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+
+
+        <DataGrid Grid.Row="1" Name="DataGridResults"
+                  ItemsSource="{Binding ProductList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedProduct,UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column"
+                  AutoGenerateColumns="False"
+                  HorizontalGridLinesBrush="Black"
+                  BorderBrush="Black"
+                  Foreground="Black"
+                  FontWeight="Bold">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="ProductName"
+                                    Binding="{Binding tblProducts.ProductName}" />
+                <DataGridTextColumn Header="ProductKey"
+                                    Binding="{Binding tblProducts.ProductKey}" />
+
+                <DataGridTextColumn Header="Quantity"
+                                    Binding="{Binding tblProducts.Quantity}" />
+
+                <DataGridTextColumn Header="Price"
+                                    Binding="{Binding tblProducts.Price}" />
+                <DataGridTextColumn Header="Stored"
+                                    Binding="{Binding tblProducts.Stored}" />
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Command="{Binding Path=DataContext.Delete, RelativeSource= {RelativeSource FindAncestor,
+                                       AncestorType={x:Type DataGrid}},UpdateSourceTrigger=PropertyChanged}"
+                                     Content="Delete" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Name="btnAdd" Content="Add Product" Width="90" Height="20"
+                Command="{Binding AddCommand, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="170,5.2,533.6,5.2"/>
+        <Button Name="btnEdit" Content="Edit Product" Width="90" Height="20"
+                Command="{Binding EditCommand, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Margin="21,5.8,682.6,4.6" Grid.Row="2"/>
+
     </Grid>
+
 </Window>

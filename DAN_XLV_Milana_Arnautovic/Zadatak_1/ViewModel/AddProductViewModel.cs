@@ -80,6 +80,9 @@ namespace Zadatak_1.ViewModel
         #region Commands
 
         private ICommand save;
+        /// <summary>
+        /// Save command
+        /// </summary>
         public ICommand Save
         {
             get
@@ -92,7 +95,9 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// Save execute
+        /// </summary>
         private void SaveExecute()
         {
             try
@@ -126,7 +131,10 @@ namespace Zadatak_1.ViewModel
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        /// <summary>
+        /// Can save
+        /// </summary>
+        /// <returns></returns>
         private bool CanSaveExecute()
         {
             if (String.IsNullOrEmpty(product.ProductKey) ||
@@ -142,6 +150,9 @@ namespace Zadatak_1.ViewModel
         }
 
         private ICommand cancel;
+        /// <summary>
+        ///Cancel command 
+        /// </summary>
         public ICommand Cancel
         {
             get
@@ -154,7 +165,9 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-        
+        /// <summary>
+        /// Cancel execute
+        /// </summary>
         private void CancelExecute()
         {
             try

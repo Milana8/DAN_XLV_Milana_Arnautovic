@@ -66,6 +66,9 @@ namespace Zadatak_1.ViewModel
         #region Commands
         
         private ICommand storeProduct;
+        /// <summary>
+        /// Store product command
+        /// </summary>
         public ICommand StoreProduct
         {
             get
@@ -78,7 +81,9 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// Store product execute
+        /// </summary>
         public void StoreProductExecute()
         {
             Delegate del = new Delegate();
@@ -89,13 +94,13 @@ namespace Zadatak_1.ViewModel
                     int productId = Product.ID;
                     if (Product.Quantity > 100)
                     {
-                       del.WarehouseFull();
+                       del.WarehouseFull(); //If the quantity is greater than 100 it cannot be stored
 
                     }
                     
                     else
                     {
-                        del.ProductStored();
+                        del.ProductStored(); //If the quantity is less than 100 it can be stored
                     }
                     ProductList = service.GetAllProducts().ToList();
                 }
@@ -105,6 +110,10 @@ namespace Zadatak_1.ViewModel
                 MessageBox.Show(ex.ToString());
             }
         }
+        /// <summary>
+        /// Can store product
+        /// </summary>
+        /// <returns></returns>
 
         public bool CanStoreProductExecute()
         {
@@ -124,7 +133,9 @@ namespace Zadatak_1.ViewModel
 
             public event Notification OnNotification;
 
-           
+            /// <summary>
+            /// Notice that the warehouse is full
+            /// </summary>
             public void WarehouseFull()
             {
                 OnNotification += () =>
@@ -133,7 +144,9 @@ namespace Zadatak_1.ViewModel
                 };
                 OnNotification.Invoke();
             }
-           
+            /// <summary>
+            /// Notification that the product is stored
+            /// </summary>
             public void ProductStored()
             {
                 OnNotification += () =>

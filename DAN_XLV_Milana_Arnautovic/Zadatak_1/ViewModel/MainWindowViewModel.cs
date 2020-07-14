@@ -77,6 +77,9 @@ namespace Zadatak_1.ViewModel
         #region Commands
 
         private ICommand addCommand;
+        /// <summary>
+        /// Add product command
+        /// </summary>
         public ICommand AddCommand
         {
             get
@@ -89,7 +92,9 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-        
+        /// <summary>
+        /// Add product execute
+        /// </summary>
         private void AddCommandExecute()
         {
             try
@@ -108,7 +113,10 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-        
+        /// <summary>
+        /// Can add product
+        /// </summary>
+        /// <returns></returns>
         private bool CanAddCommandExecute()
         {
             return true;
@@ -116,6 +124,9 @@ namespace Zadatak_1.ViewModel
 
         
         private ICommand editCommand;
+        /// <summary>
+        /// Edit product command
+        /// </summary>
         public ICommand EditCommand
         {
             get
@@ -128,7 +139,9 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-       
+       /// <summary>
+       /// Edit product execute
+       /// </summary>
         public void EditCommandExecute()
         {
             try
@@ -150,7 +163,10 @@ namespace Zadatak_1.ViewModel
             }
         }
 
-       
+       /// <summary>
+       /// Can edit product
+       /// </summary>
+       /// <returns></returns>
         public bool CanEditCommandExecute()
         {
             if (Product == null)

@@ -47,7 +47,9 @@ namespace Zadatak_1.ViewModel
 
         #region Commands
         private ICommand login;
-
+        /// <summary>
+        /// Command login
+        /// </summary>
         public ICommand Login
         {
             get
@@ -60,7 +62,10 @@ namespace Zadatak_1.ViewModel
             }
             set { login = value; }
         }
-
+        /// <summary>
+        /// Method for checking username and password
+        /// </summary>
+        /// <param name="o"></param>
         private void LoginExecute(object o)
         {
             try

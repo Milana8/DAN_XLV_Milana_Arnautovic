@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DAN_XLVModelStoreContainer" CdmEntityContainer="DAN_XLVEntities">
+    <EntitySetMapping Name="tblProducts">
+      <EntityTypeMapping TypeName="DAN_XLVModel.tblProduct">
+        <MappingFragment StoreEntitySet="tblProducts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Stored" ColumnName="Stored" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
